@@ -1,0 +1,10 @@
+create database hoge;
+grant all on hoge.* to namae@localhost identified by "passoword";
+
+exit
+
+$mysql -u namae -p hoge
+create table user(
+	id int,
+	name varchar(256));
+insert into user values(1,"honda");
