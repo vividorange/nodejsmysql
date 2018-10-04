@@ -1,0 +1,23 @@
+<style>
+tr:nth-child(odd){
+background: #eeeeee;
+}
+tr:nth-child(even){
+background: #dddddd;
+}
+</style>
+<% if(error){ %>
+<h1>error: <%= error %></h1>
+<% }%>
+<table>
+	<tr>
+		<th>id</th>
+		<th>username</th>
+	</tr>
+	<% for(const row of user){ %>
+	<tr>
+		<td><%= row.id %></td>
+		<td><%= row.username %></td>
+	</tr>
+	<% } %>
+</table>
