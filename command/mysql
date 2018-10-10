@@ -1,1 +1,3 @@
 sudo apt install -y mysql-server
+
+echo utf8 setting siro

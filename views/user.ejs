@@ -9,6 +9,7 @@ background: #dddddd;
 <% if(error){ %>
 <h1>error: <%= error %></h1>
 <% }%>
+<a href="/add">add</a>
 <table>
 	<tr>
 		<th>id</th>
@@ -17,7 +18,7 @@ background: #dddddd;
 	<% for(const row of user){ %>
 	<tr>
 		<td><%= row.id %></td>
-		<td><%= row.username %></td>
+		<td><%= row.name %></td>
 	</tr>
 	<% } %>
 </table>
