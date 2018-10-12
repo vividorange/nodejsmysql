@@ -39,7 +39,7 @@ app.get("/user", function(req,res)
 	db.end();
 });
 
-app.get("/add", function(req,res)
+app.get("/add/:name?", function(req,res)
 {
 	const data = {
 		error: false,
@@ -49,10 +49,12 @@ app.get("/add", function(req,res)
 	const db = mysql.createConnection(DB_SETTING);
 
 	const id = Math.floor(Math.random()*100);
-	const name = id+"sann";
+	const name = req.params.name === undefined ?
+		id+"sann":
+		req.params.name;
 
 	db.connect();
-	db.query(`insert into user values(${id}, "${name}");`, function(err,rows,fields)
+	db.query(`insert into user values(${id}, ${mysql.escape(name)});`, function(err,rows,fields)
 	{
 		if(err)
 		{
